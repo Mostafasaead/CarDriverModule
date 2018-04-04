@@ -1,22 +1,30 @@
 package com.mytaxi.service.driver;
 
-import com.mytaxi.domainobject.DriverDO;
-import com.mytaxi.domainvalue.OnlineStatus;
-import com.mytaxi.exception.ConstraintsViolationException;
-import com.mytaxi.exception.EntityNotFoundException;
 import java.util.List;
 
-public interface DriverService
-{
+import com.mytaxi.datatransferobject.CarDTO;
+import com.mytaxi.datatransferobject.DriverCarDTO;
+import com.mytaxi.datatransferobject.DriverDTO;
+import com.mytaxi.domainvalue.OnlineStatus;
+import com.mytaxi.entity.DriverEntity;
+import com.mytaxi.exception.BusinessException;
 
-    DriverDO find(Long driverId) throws EntityNotFoundException;
+public interface DriverService {
 
-    DriverDO create(DriverDO driverDO) throws ConstraintsViolationException;
+	DriverEntity find(Long driverId) throws BusinessException;
 
-    void delete(Long driverId) throws EntityNotFoundException;
+	DriverEntity create(DriverEntity driverDO) throws BusinessException;
 
-    void updateLocation(long driverId, double longitude, double latitude) throws EntityNotFoundException;
+	void delete(Long driverId) throws BusinessException;
 
-    List<DriverDO> find(OnlineStatus onlineStatus);
+	void updateLocation(long driverId, double longitude, double latitude) throws BusinessException;
+
+	List<DriverEntity> find(OnlineStatus onlineStatus);
+
+	DriverCarDTO assignCarToDriver(Long driverId, Long CarId) throws BusinessException;
+
+	void unassignCarFromDriver(Long driverId, Long carId) throws BusinessException;
+
+	List<DriverDTO> findByCarCriterias(CarDTO carDTO) throws BusinessException;
 
 }

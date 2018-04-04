@@ -26,17 +26,17 @@ You should be aware of the following conventions while you are working on this e
 You should commit into your local git repository and include the commit history into the final result.
 
 ## Task 1
- * Write a new Controller for maintaining cars (CRUD).
+ * Write a new Controller for maintaining cars (CRUD). done
    * Decide on your own how the methods should look like.
-   * Entity Car: Should have at least the following characteristics: license_plate, seat_count, convertible, rating, engine_type (electric, gas, ...)
-   * Entity Manufacturer: Decide on your own if you will use a new table or just a string column in the car table.
- * Extend the DriverController to enable drivers to select a car they are driving with.
- * Extend the DriverController to enable drivers to deselect a car.
- * Extend the DriverDo to map the selected car to the driver.
- * Add example data to resources/data.sql
+   * Entity Car: Should have at least the following characteristics: license_plate, seat_count, convertible, rating, engine_type (electric, gas, ...) done
+   * Entity Manufacturer: Decide on your own if you will use a new table or just a string column in the car table.	done
+ * Extend the DriverController to enable drivers to select a car they are driving with. done
+ * Extend the DriverController to enable drivers to deselect a car.	done
+ * Extend the DriverDo to map the selected car to the driver.	done
+ * Add example data to resources/data.sql	done
  
 ## Task 2
-First come first serve: A car can be selected by exactly one ONLINE Driver. If a second driver tries to select a already used car you should throw a CarAlreadyInUseException.
+First come first serve: A car can be selected by exactly one ONLINE Driver. If a second driver tries to select a already used car you should throw a CarAlreadyInUseException. Done
 
 ## Task 3
 Make use of the filter pattern to implement an endpoint in the DriverController to get a list of drivers with specific characteristics. Reuse the characteristics you implemented in task 1.
